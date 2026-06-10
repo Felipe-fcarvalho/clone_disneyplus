@@ -1,0 +1,56 @@
+@use 'variables';
+
+.shows {
+    padding: 2vw 5.6vw;
+    min-height: 50vw;
+
+    &__list {
+        display: none;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 44px;
+
+        &--is-active {
+            display: grid;
+        }
+
+        &__item {
+            img {
+                max-width: 100%;
+                border-radius: 4px;
+                cursor: pointer;
+                
+                &:hover {
+                    opacity: 0.5;
+                    transition: ease-in-out .3s;
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+
+        &__button {
+            color: variables.$color-text-secondary;
+            margin: 0 1vw;
+            padding-bottom: 5px;
+            border: none;
+            border-bottom: 5px solid transparent;
+            font-size: 20px;
+            background: none;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            &--is-active {
+                border-color: variables.$color-text-secondary;
+            }
+        }
+    }
+}
