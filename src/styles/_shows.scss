@@ -19,6 +19,8 @@
                 max-width: 100%;
                 border-radius: 4px;
                 cursor: pointer;
+                    transition: ease-in-out .3s;
+                    transform: translateY(5px);
                 
                 &:hover {
                     opacity: 0.5;
