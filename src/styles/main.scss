@@ -5,6 +5,7 @@
 @use 'available-devices';
 @use 'faq';
 @use 'footer';
+@use 'header';
 
 @font-face {
     font-family: 'Avenir';
@@ -23,6 +24,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Avenir', sans-serif;
+    list-style: none;
 }
 
 body {
@@ -40,33 +42,52 @@ body {
     color: variables.$color-text-primary;
 }
 
-@mixin hoverBtn($opacity: 0.6) {
-    opacity: $opacity;
-    transition: all ease 0.5s
-}
-
 .text {
     @include text;
+
+    @media (max-width: 768px) {
+        @include text(14px);
+    }
 }
 
 .text--sm {
     @include text(12px);
+
+    @media (max-width: 768px) {
+        @include text(11px);
+    }
 }
 
 .text--lg {
     @include text(18px);
+
+    @media (max-width: 768px) {
+        @include text(15px);
+    }
 }
 
 .title {
     @include title;
+
+    @media (max-width: 768px) {
+        @include title(24px);
+    }
 }
 
 .title--sm {
     @include title(28px);
+
+    @media (max-width: 768px) {
+        @include title(22px);
+    }
 }
 
 .title--lg {
     @include title(44px);
+
+    @media (max-width: 768px) {
+        @include title(26px);
+    }
 }
 
 .link-text {
@@ -76,21 +97,39 @@ body {
 }
 
 .button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 60px;
     font-size: 18px;
-    background-color: variables.$color-btn-bg;
+    background-color: variables.$color-btn-primary;
     color: variables.$color-text-secondary;
-    border: none;
     text-transform: uppercase;
     border-radius: 4px;
-    margin-top: 2vw;
-    margin-bottom: 8px;
+    text-decoration: none;
+    padding: 8px 16px;
+    letter-spacing: 1px;
+    border: 1px solid variables.$color-btn-primary;
     cursor: pointer;
 
-    &:hover {
-        @include hoverBtn();
+    &--secondary {
+        background-color: variables.$color-btn-secondary;
+        border-color: variables.$color-btn-secondary;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &--terciary {
+        background-color: variables.$color-btn-terciary;
+        border-color: variables.$color-text-secondary;
+
+        &:hover {
+            background-color: variables.$color-text-secondary;
+            color: variables.$color-btn-terciary;
+        }
     }
 }
 
@@ -99,12 +138,21 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    
+
+    @media (max-width: 768px) {
+        display: block;
+        text-align: center;
+
+        h2 {
+            margin-top: 20px;
+        }
+    }
+
     img {
         max-width: 100%;
     }
 
-    .image-text-section__text-container {
+    &__text-container {
         padding: 0 2vw;
 
         h2 {
@@ -129,6 +177,12 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @media (max-width: 768px) {
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
         }
     }
 }

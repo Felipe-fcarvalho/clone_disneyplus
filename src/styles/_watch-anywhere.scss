@@ -3,6 +3,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
+
+    @media (max-width: 768px) {
+            max-width: 64px;
+        }
     
     img {
         max-width: 100%;
