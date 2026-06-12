@@ -18,6 +18,10 @@
     .button {
         margin-top: 2vw;
         margin-bottom: 8px;
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 
     &__content {

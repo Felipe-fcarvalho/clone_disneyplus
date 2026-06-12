@@ -24,6 +24,10 @@
 
         .button {
             margin-top: 24px;
+
+            &:hover {
+                opacity: 0.8;
+            }
         }
 
         &__item {
